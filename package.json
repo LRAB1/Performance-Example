@@ -1,0 +1,23 @@
+{
+  "name": "performance-example",
+  "version": "1.0.0",
+  "description": "Backend-frontend cursus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LRAB1/Performance-Example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LRAB1/Performance-Example/issues"
+  },
+  "homepage": "https://github.com/LRAB1/Performance-Example#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
