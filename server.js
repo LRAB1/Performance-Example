@@ -1,4 +1,5 @@
 const express = require('express');
+const cluster = require('cluster');
 
 const app = express();
 
@@ -13,12 +14,20 @@ app.get('/', (req, res) => {
 /*     JSON.stringify({});
     JSON.parse("{}"); */
     //[5,1,2,3,4].sort also blocking
-    res.send('Performance example');
+    res.send(`Performance example ${process.pid}`);
 });
 
+console.log('Running server.js');
 app.get('/timer', (req, res) => {
-    delay(1500);//time in ms.
-    res.send('Ding Ding Ding motherfucker!');
+    delay(5000);//time in ms.
+    res.send(`Ding Ding Ding motherfucker! ${process.pid}`);
 });
 
-app.listen(3000);
+if (cluster.isMaster) {
+    console.log('Master has been started.');
+    cluster.fork();
+    cluster.fork();
+} else {
+    console.log('Worker started.');
+    app.listen(3000);
+};
