@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 
 console.log('Running server.js');
 app.get('/timer', (req, res) => {
-    delay(5000);//time in ms.
-    res.send(`Ding Ding Ding motherfucker! ${process.pid}`);
+    delay(2000);//time in ms.
+    res.send(`Beep Beep motherfucker! ${process.pid}`);
 });
 
 console.log('Running server.js');
